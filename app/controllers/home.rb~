@@ -1,0 +1,9 @@
+require 'net/http'
+
+Funqui::App.controllers :home do
+  
+  get :index, :map => '/' do  
+  	
+  end
+
+end
