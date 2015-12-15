@@ -1,4 +1,4 @@
-Fitness Time [![Build Status](https://travis-ci.org/FitnessTime/FitnessTime.svg?branch=master)](https://travis-ci.org/FitnessTime/FitnessTime)
+Fitness Time [![Build Status](https://travis-ci.org/FitnessTime/Backend.svg?branch=master)](https://travis-ci.org/FitnessTime)
 
 
 
