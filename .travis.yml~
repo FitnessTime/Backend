@@ -7,5 +7,5 @@ script: PADRINO_ENV=travis bundle exec padrino rake
 
 notifications:
   email:
-    - skalic.julian@gmail.com
+    - skalicjulian@gmail.com
     - leandromoscheni@gmail.com
