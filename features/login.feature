@@ -3,36 +3,26 @@ Feature: Pagina de loggeo
     Como Usuario
     Quiero loggearme ingresando un usuario/email y contraseña.
 
-    Scenario: Loggearme con un usuario exitosamente.
-        Given Estoy en la pagina de loggeo
-        When Ingreso el usuario "Test"
-        And Ingreso la contrasenia "test1234"
-        When Hago click en el boton iniciarSesion
-        Then Hay un usuario loggeado con el nombre "Test"
-        And Estoy en la pagina principal
-
     Scenario: Loggearme con un email exitosamente.
         Given Estoy en la pagina de loggeo
-        When Ingreso el email "Test@gmail.com"
+        And Hay un usuario creado "test@gmail.com" con contrasenia "test1234"
+        When Ingreso el mail "test@gmail.com"
         And Ingreso la contrasenia "test1234"
-        When Hago click en el boton iniciarSesion
-        Then Hay un usuario loggeado con el nombre "Test"
-        And Estoy en la pagina principal
+        When Hago click en el boton "Login"
+        Then Hay un usuario loggeado con el nombre "test@gmail.com"
 
     Scenario: Loggearme con un usuario fallido.
         Given Estoy en la pagina de loggeo
-        When Ingreso el usuario "TestFalla"
+        And No hay un usuario con el nombre "TestFalla"
+        When Ingreso el mail "TestFalla"
         And Ingreso la contrasenia "1234"
-        When Hago click en el boton iniciarSesion
-        Then Veo un mensaje de "Usuario o contraseña invalido"
+        When Hago click en el boton "Login"
+        Then Veo un mensaje "Usuario o password invalidos"
         
-    Scenario: Loggearme sin completar el usuario.
+    Scenario: Loggearme con contraseña fallida.
         Given Estoy en la pagina de loggeo
-        When Hago click en el boton iniciarSesion
-        Then Veo un mensaje de "Debe ingresar un usuario"
-
-    Scenario: Loggearme sin completar la contraseña.
-        Given Estoy en la pagina de loggeo
-        When Ingreso el usuario "TestFalla"
-        When Hago click en el boton iniciarSesion
-        Then Veo un mensaje de "Debe ingresar una contraseña"
+        And Hay un usuario creado "test@gmail.com" con contrasenia "test1234"
+        When Ingreso el mail "Test"
+        And Ingreso la contrasenia "test123"
+        When Hago click en el boton "Login"
+        Then Veo un mensaje "Usuario o password invalidos"
