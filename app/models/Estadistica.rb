@@ -5,5 +5,5 @@ class Estadistica
 
   	property :registroDePasos, Integer
   	property :registroDeKilometrosRecorridos, Integer
-
+  	belongs_to :usuario
 end

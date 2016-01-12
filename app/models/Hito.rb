@@ -5,5 +5,5 @@ class Hito
 
   	property :fecha, Date
   	property :carga, Integer
-
+  	belongs_to :ejercicioDeCarga
 end

@@ -7,6 +7,7 @@ class RutinaDeAerobico
   	property :fin, Date
     property :descripcion, String
     property :aclaracion, String
-    has n, :ejerciciosDeAerobico, :through => Resource
+    has n, :ejercicio_de_aerobicos, :through => Resource
+    has n, :usuarios, :through => Resource
 
 end

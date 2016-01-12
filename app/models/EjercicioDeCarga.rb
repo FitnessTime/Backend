@@ -7,7 +7,6 @@ class EjercicioDeCarga
   	property :fin, Date
     property :descripcion, String
     property :aclaracion, String
-    has n, :hitos
-    has n, :rutinasDeCarga, :through => Resource
+    has n, :rutina_de_cargas, :through => Resource
 
 end

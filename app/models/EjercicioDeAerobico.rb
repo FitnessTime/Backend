@@ -7,5 +7,6 @@ class EjercicioDeAerobico
   	property :series, Integer
   	property :tiempoActivo, Integer
   	property :tiempoDescanso, Integer
+  	has n, :rutina_de_aerobicos, :through => Resource
 
 end
